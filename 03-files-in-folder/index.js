@@ -1,9 +1,3 @@
-/* import { readdir } from 'fs/promises';
-const path = require('path')
-const fs = require('fs')
-
- */
-
 const fs = require('fs')
 
 const { readdir, open } = require('fs/promises')
