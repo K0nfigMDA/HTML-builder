@@ -1,9 +1,10 @@
 const path = require('path')
 const fs = require('fs')
-const {mkdir, copyFile, readdir} = require('fs/promises')
+const {mkdir, copyFile, readdir, rm} = require('fs/promises')
 
 async function createCopyFolder(ourFolderPath, copyFolderPath){
 	try {
+	await rm(copyFolderPath, {recursive: true, force: true})
 	await mkdir(copyFolderPath, {recursive: true })
 	const files = await readdir(ourFolderPath, {withFileTypes: true})
 	for (const file of files) {
